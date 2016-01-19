@@ -1,4 +1,7 @@
 # Pau-Hana-Chi
+:hibiscus::hibiscus::beer::hibiscus::hibiscus::beers::hibiscus::hibiscus::cocktail::hibiscus::hibiscus::tropical_drink::hibiscus::hibiscus::wine_glass::hibiscus::hibiscus::beer::hibiscus::hibiscus::beers::hibiscus::hibiscus::cocktail::hibiscus::hibiscus::tropical_drink::hibiscus::hibiscus::wine_glass::hibiscus::hibiscus::beer::hibiscus::hibiscus::beers::hibiscus::hibiscus::cocktail::hibiscus::hibiscus:
+<br>
+
 A guide to Chicago's best bars, happy hours and drink specials.
 
 "Pau Hana" is a Hawaiian phrase that translates to "finished work" or "the time after work where you can socialize and relax with family and/or friends", Pau Hana Chi is an app for finding the best bar/happy hour in Chicago to unwind after finishing work, or finishing your GA WDI Capstone project! 
