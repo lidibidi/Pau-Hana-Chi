@@ -3,7 +3,7 @@ A guide to Chicago's best bars, happy hours and drink specials.
 
 Capstone Project
 
-****User stories
+####User stories
 
 
 Matthew: New to the city and commutes from the northside of the city to the loop for work. He hasn't made too many friends in the city yet so he needs to be able to find some good spots to go to that wont break the bank that are close to his work and on the weekends are in his own neighborhood. 
