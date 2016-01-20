@@ -1,0 +1,14 @@
+{
+  "barName": "Local 22",
+  "baraddress": "123 main st",
+  "barNeighborhood": "River North",
+  "barSpecial": { "Monday": "$2 Cans",
+    "Tuesday": "$2 Bottles",
+    "Wednesday": "$2 Wines",
+    "Thursday": "$2 Martinis",
+    "Friday": "$2 Ciders",
+    "Saturday": "$2 Stouts",
+    "Sunday": "$2 Sodas"
+
+  }
+}
