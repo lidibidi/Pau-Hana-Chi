@@ -1,10 +1,17 @@
 Rails.application.routes.draw do
 
-  root "users#index"
+  root "home#index"
+
+  resources :bars
+
   resources :users, only: [:new, :index, :create]
 
   get 'login', to: 'sessions#new'
-  resources :sessions, only: [:new, :index, :destroy] 
+  resources :sessions, only: [:new, :index, :destroy]
+
+  get "/login", to: "session#new"
+  post "/session", to: "session#create"
+  get "/logout", to: "session#destroy"
 
   # get 'home', to:'bars#index'
   # resources :bars, only: [:index, :create, :new, :edit, :show, :update, :destroy]
