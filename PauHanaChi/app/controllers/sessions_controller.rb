@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to user_path (user)
+      redirect_to :bars
     else
       @message = "Your email and password combination is incorrect"
       render "new"
@@ -15,6 +15,7 @@ class SessionsController < ApplicationController
 end
 
   def destroy
+    session[:user_id] = nil
     redirect_to root_url, notice
   end
 

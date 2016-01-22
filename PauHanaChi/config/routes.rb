@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new'
   resources :sessions, only: [:new, :index, :destroy]
 
-  get "/login", to: "session#new"
-  post "/session", to: "session#create"
+  get "/home", to: "session#new"
+  post "/sessions", to: "sessions#create"
   get "/logout", to: "session#destroy"
 
   # get 'home', to:'bars#index'

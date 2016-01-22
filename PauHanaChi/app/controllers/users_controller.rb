@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+before_action  :load_user, only: [:show, :edit, :update, :destroy]
+before_action :authenticate, :authorize, :only: [:edit, :update, :show]
+
   def index
     @users = User.all
   end
@@ -16,6 +19,16 @@ class UsersController < ApplicationController
     else
       render 'new'
   end
+end
+
+def authenticate
+  unless logged_in?
+    redirect_to root_url
+  end
+end
+
+def load_user
+  return @user = User.find(params[:id])
 end
 
 private
