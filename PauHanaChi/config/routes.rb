@@ -1,5 +1,19 @@
 Rails.application.routes.draw do
 
+  get 'specials/index'
+
+  get 'specials/create'
+
+  get 'specials/new'
+
+  get 'specials/edit'
+
+  get 'specials/show'
+
+  get 'specials/update'
+
+  get 'specials/destroy'
+
   root "home#index"
 
   resources :bars
