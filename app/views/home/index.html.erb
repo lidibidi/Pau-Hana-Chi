@@ -1,6 +1,19 @@
-<h1>Pau Hana Chi</h1>
-<!-- <p>Find me in app/views/home/index.html.erb</p> -->
-<img id="logo" src="<%=asset_path('phclogo.png')%>">
+<div class="center jumbotron">
+  <h1>Pau Hana Chi</h1>
+  <%= link_to image_tag("officialphclog.png",  id: "phclogo", alt: "Pau Hana Chi logo"),
+            '#' %>
+
+  <h2>
+    Pau Hana means work is done, time to relax and enjoy life! Pau Hana Chi will help you find the perfect spot in the the windy city!
+  </h2>
+
+  <%= link_to "Register!", new_user_path, class: "btn btn-lg btn-primary" %>
+  </div>
+
+  <!-- <%= link_to image_tag("officialphclog.png",  id: "phclogo", alt: "Pau Hana Chi logo"),
+            '#' %> -->
+
+<!-- <img id="logo" src="<%=asset_path('officialphclog.png')%>">
 <body id="pau-hana-home">
   <p>
     Pau Hana means work is done, time to relax and enjoy life! Pau Hana Chi will help you find the perfect spot in the the windy city!

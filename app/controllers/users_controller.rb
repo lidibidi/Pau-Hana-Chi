@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 before_action  :load_user, only: [:show, :edit, :update, :destroy]
-before_action :authenticate, :authorize, :only: [:edit, :update, :show]
+# before_action :authenticate, :authorize, :only [:edit, :update, :show]
 
   def index
     @users = User.all
@@ -24,6 +24,12 @@ end
 def authenticate
   unless logged_in?
     redirect_to root_url
+  end
+end
+
+def authorize
+  unless current_user == @user_id
+    redirect_to root_path
   end
 end
 

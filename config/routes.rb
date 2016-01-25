@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   resources :bars
 
-  resources :users, only: [:new, :index, :create]
+  resources :users, only: [:new, :index, :create, :show]
 
   get 'login', to: 'sessions#new'
   resources :sessions, only: [:new, :index, :destroy]
