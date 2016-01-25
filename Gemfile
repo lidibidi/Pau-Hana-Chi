@@ -47,4 +47,9 @@ group :development do
   gem 'spring'
 
   gem 'rspec-rails'
+
+  group :production do
+  gem 'puma',           '~> 2.15.3'
+end
+
 end

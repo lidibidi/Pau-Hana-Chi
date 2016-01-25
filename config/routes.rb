@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  get    'signup'  => 'users#new'
   get 'specials/index'
 
   get 'specials/create'
@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   resources :bars
 
-  resources :users, only: [:new, :index, :create, :show]
+  resources :users #, only: [:new, :index, :create, :show]
 
   get 'login', to: 'sessions#new'
   resources :sessions, only: [:new, :index, :destroy]

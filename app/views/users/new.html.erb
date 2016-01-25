@@ -1,32 +1,29 @@
-<h1>Sign Up</h1>
+<% provide(:title, 'Registration') %>
+<h1>Register</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
 <%= form_for @user do |f| %>
-  <% if @user.errors.any? %>
+<%= render 'shared/error_messages' %>
 
-    <h2>Form is invalid</h2>
-    <ul>
-      <% for message in @user.errors.full_messages %>
-      <li><%= message %></li>
-      <% end %>
-    </ul>
 
-  <% end %>
-
-    <%= f.label :first_name, 'First Name' %>
-    <%= f.text_field :first_name %>
+    <%= f.label :first_name, 'First Name'%>
+    <%= f.text_field :first_name, class: 'form-control'  %>
 
     <%= f.label :last_name, 'Last Name' %>
-    <%= f.text_field :last_name %>
+    <%= f.text_field :last_name, class: 'form-control'  %>
 
     <%= f.label "Date of birth", "Date of birth" %>
-    <%= f.date_field :birthdate %>
+    <%= f.date_field :birthdate, class: 'form-control' %>
 
     <%= f.label :email %>
-    <%= f.text_field :email %>
+    <%= f.text_field :email, class: 'form-control' %>
 
     <%= f.label :password %>
-    <%= f.password_field :password %>
+    <%= f.password_field :password, class: 'form-control' %>
 
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-    <%= f.submit %>
+    <%= f.label :password_confirmation, "Password Confirmation" %>
+    <%= f.password_field :password_confirmation, class: 'form-control' %>
+    <%= f.submit "Register", class: "btn btn-primary" %>
 <% end %>
+</div>
+</div>
