@@ -4,21 +4,20 @@ class SessionsController < ApplicationController
   end
 
   def create
-    # find user by email
-    user = User.find_by_email(params[:email])
-    # if user exists and the password matches, save id and start their session
-    if user && user.authenticate(params[:password])
-      session[:user_id] = user.id
-      redirect_to :bars
-    else #whomp whomp wrong password
-      @message = "Your email and password combination is incorrect"
-      render "new"
+      user = User.find_by(email: params[:session][:email].downcase)
+      if user && user.authenticate(params[:session][:password])
+        # Log the user in and redirect to the user's show page.
+        log_in user
+        redirect_to user
+      else
+        flash.now[:danger] = 'Invalid email/password combination'
+        render 'new'
+      end
   end
-end
 
   def destroy
-    session[:user_id] = nil
-    redirect_to root_url, notice
-  end
+      log_out
+      redirect_to root_url
+    end
 
 end #the real end

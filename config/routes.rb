@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   get    'signup'  => 'users#new'
+  get    'login'   => 'sessions#new'
+  post   'login'   => 'sessions#create'
+  delete 'logout'  => 'sessions#destroy'
   get 'specials/index'
 
   get 'specials/create'
@@ -20,12 +23,12 @@ Rails.application.routes.draw do
 
   resources :users #, only: [:new, :index, :create, :show]
 
-  get 'login', to: 'sessions#new'
+  # get 'login', to: 'sessions#new'
   resources :sessions, only: [:new, :index, :destroy]
 
-  get "/home", to: "session#new"
-  post "/sessions", to: "sessions#create"
-  get "/logout", to: "session#destroy"
+  # get "/home", to: "sessions#new"
+  # post "/sessions", to: "sessions#create"
+  # get "/logout", to: "session#destroy"
 
   # get 'home', to:'bars#index'
   # resources :bars, only: [:index, :create, :new, :edit, :show, :update, :destroy]
