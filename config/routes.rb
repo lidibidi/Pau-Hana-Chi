@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get    'signup'  => 'users#new'
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
@@ -20,6 +21,8 @@ Rails.application.routes.draw do
   root "home#index"
 
   resources :bars
+
+  get 'bars/index'
 
   # get 'bars' => 'bars#show'
   # post 'bars' => 'bars#create'

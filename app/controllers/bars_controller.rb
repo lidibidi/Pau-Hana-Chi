@@ -6,6 +6,7 @@ class BarsController < ApplicationController
   def index
     @bars = Bar.all
   end
+
 # post/bars
   def create
     @bar = Bar.new bar_params
