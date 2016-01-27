@@ -21,6 +21,11 @@ Rails.application.routes.draw do
 
   resources :bars
 
+  # get 'bars' => 'bars#show'
+  # post 'bars' => 'bars#create'
+  # get 'bars' => 'bars#show'
+  # delete 'bars' => 'bars#destroy'
+
   resources :users #, only: [:new, :index, :create, :show]
 
   # get 'login', to: 'sessions#new'

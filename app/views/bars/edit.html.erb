@@ -1,6 +1,34 @@
-<h1>Editing Post</h1>
+<% provide(:title, "Edit Bar") %>
+<h1>Edit Pau Hana Bar Listing  </h1>
 
-<%= render 'form' %>
+div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@bar) do |f| %>
+      <%= render 'shared/error_messages' %>
 
-<%= link_to 'Show', @bar %> |
-<%= link_to 'Back', bars_path %>
+      <%= f.label :bar_name %>
+      <%= f.text_field :bar_name, class: 'form-control' %>
+
+      <%= f.label :address %>
+      <%= f.text_field :address, class: 'form-control' %>
+
+      <%= f.label :city %>
+      <%= f.text_field :city, class: 'form-control' %>
+
+      <%= f.label :zipcode %>
+      <%= f.text_field :zipcode, class: 'form-control' %>
+
+      <%= f.label :neighborhood %>
+      <%= f.text_field :neighborhood, class: 'form-control' %>
+
+      <%= f.label :phone %>
+      <%= f.text_field :phone, class: 'form-control' %>
+
+      <%= f.label :website %>
+      <%= f.text_field :website, class: 'form-control' %>
+
+      <%= f.submit "Save changes", class: "btn btn-primary" %>
+    <% end %>
+
+  </div>
+</div>

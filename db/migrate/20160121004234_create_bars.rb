@@ -11,5 +11,6 @@ class CreateBars < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+    add_index :bars, [:user_id, :created_at]
   end
 end

@@ -1,3 +1,26 @@
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <% @bars.each do |bar| %>
+    <div id= class="specials">
+      <img src="..." alt="...">
+      <div class="caption">
+        <ol>
+          <li><%= bar.bar_name %></li>
+          <li><%= bar.address %></li>
+          <li><%= bar.city %></li>
+          <li><%= bar.zipcode%></li>
+          <li><%= bar.neighborhood %></li>
+          <li><%= bar.phone %></li>
+          <li><%= bar.website %></li>
+        </ol>
+        <p><a href="#" class="btn btn-primary" role="button">add to fav</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -7,7 +30,7 @@
 
 <p>
   <strong>Address:</strong>
-  <%= @bar.address %>
+
 </p>
 
 <p>
