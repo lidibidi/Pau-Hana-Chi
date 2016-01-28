@@ -19,6 +19,8 @@ resources :specials, :bars, :users
   end
 
 get '/bars/:bar_id/specials/:id' => 'specials#show'
+get '/bars/:bar_id/specials' => 'specials#create'
+
   get 'bars/index'
 
   # get 'bars' => 'bars#show'

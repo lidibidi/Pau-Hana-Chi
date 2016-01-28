@@ -1,17 +1,26 @@
 class BarsController < ApplicationController
-
+  before_action :set_bar, only: [:show, :edit, :update]
   before_action :admin_user,     only: :destroy
 
   # get/bars
   def index
     @bars = Bar.paginate(page: params[:page])
+    @hash = Gmaps4rails.build_markers(@bars) do |bar, marker|
+      marker.lat bar.latitude
+      marker.lng bar.longitude
+      marker.infowindow bar.bar_name
+      marker.picture( {
+        "url": "http://i.imgur.com/ubmQbZx.png",
+        "width":  32,
+        "height": 32})
+    end
   end
 
 # post/bars
   def create
     @bar = Bar.new bar_params
     if @bar.save
-      flash[:success] = ['Bar was added to Pau Hana Chi!']
+      flash[:success] = ('Bar was added to Pau Hana Chi!')
       redirect_to bars_path
       else
         render :new
@@ -27,18 +36,21 @@ class BarsController < ApplicationController
   # get/bars/id/edit
   def edit
     @bar = current_bar
-    1.times { @bar.specials.build}
   end
 
   # get/bars/id
   def show
     @bar = Bar.find(params[:id])
+    @specials = current_bar.specials
   end
 
 # patch/put/bars/1
   def update
     @bar = current_bar
-    if @bar.update_attributes(params[:bar])
+    @specials =current_bar.specials
+    if @bar.update_attributes(bar_params)
+
+
       flash[:success] = "Bar updated"
       redirect_to @bar
     else
@@ -49,7 +61,7 @@ end
   def destroy
     @bar = current_bar
     @bar.destroy
-    flash[:success] = "Bar deleted"
+    flash[:success] = "Bar Deleted"
     redirect_to bars_path
   end
 

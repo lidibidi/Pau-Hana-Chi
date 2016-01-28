@@ -1,2 +1,20 @@
-<h1>Specials#show</h1>
-<p>Find me in app/views/specials/show.html.erb</p>
+<% provide(:title, "Special") %>
+
+<div class="row">
+
+    <section class="special_info">
+<h5>
+
+<div class="specials_details">
+
+
+  <%= @special.special_description %></br>
+  <%= @special.day %></br>
+  <%= @special.special_price %></br>
+  <%= @special.start_time %></br>
+  <%= @special.end_time %></br>
+</div>
+
+
+
+</h5>

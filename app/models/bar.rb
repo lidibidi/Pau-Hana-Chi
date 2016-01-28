@@ -6,5 +6,5 @@ class Bar < ActiveRecord::Base
   :reject_if => :all_blank
 
   geocoded_by :address
-  after_validation :geocode
+  after_validation :geocode 
 end

@@ -6,10 +6,16 @@
   <%= gravatar_for @user %>
 
   <%= @user.user_name  %>
+  <%= @user.lat  %>
+  <%= @user.lon  %>
   <h3>Is admin?</h3><p><%= @user.admin  %></p>
 
-<% link_to @user %>
+  <% if current_user.admin? %>
+    | <%= link_to "delete", @user, method: :delete,
+                                  data: { confirm: "You sure?" } %>
 
+
+  <% end %>
 
 </h1>
     </section>

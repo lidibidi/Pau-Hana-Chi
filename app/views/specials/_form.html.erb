@@ -1,7 +1,7 @@
 <h2>Specials</h2>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-<%= f.fields_for :specials do |s| %>
+<%= f.fields_for [@bar, @special] do |s| %>
 <div class="Specials_fields">
   <div class="field">
     <%= s.label :special_description %>
@@ -28,7 +28,8 @@
     <%= s.time_field :end_time, class: 'form-control' %>
   </div>
 </div>
-
+<%= s.hidden_field :bar_id %>
+<%= s.submit "Add Special" %>
 
   <% end %>
 </div>

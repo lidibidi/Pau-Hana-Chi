@@ -1,5 +1,5 @@
 class SpecialsController < ApplicationController
-
+before_action :admin_user,     only: [:destroy, :edit]
 #get/specials
   def index
     @specials = Special.all
@@ -17,7 +17,8 @@ class SpecialsController < ApplicationController
 
 #get/special/new
   def new
-    @special = Special.new
+    @bar = Bar.find(params[:bar_id])
+    @special = @bar.specials.build
   end
 
   def edit
@@ -25,7 +26,9 @@ class SpecialsController < ApplicationController
   end
 
   def show
+    set_bar
     @special = current_special
+
   end
 
   def update
@@ -47,6 +50,9 @@ end
 
 
 private
+  def set_bar
+    @bar = Bar.find(params[:id])
+  end
 
   def current_special
     @current_special || Special.find(params[:id]) if params[:id]
@@ -56,5 +62,9 @@ private
   def special_params
     params.require(:special).permit(:special_description, :day, :special_price, :start_time, :end_time)
 
+  end
+
+  def admin_user
+    redirect_to(root_url) unless current_user.admin?
   end
 end # the real end

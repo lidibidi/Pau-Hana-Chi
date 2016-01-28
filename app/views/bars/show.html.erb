@@ -3,28 +3,31 @@
 <div class="row">
 
     <section class="bar_info">
-<h1>
+<h5>
 
 
-<%= @bar.bar_name %>
-<%= @bar.address %>
-<%= @bar.city %>
-<%= @bar.zipcode %>
-<%= @bar.neighborhood %>
-<%= @bar.phone %>
-<%= @bar.website %>
+        <br><%= @bar.bar_name %></br>
+        <br><%= @bar.address %></br>
+        <br><%= @bar.city %></br>
+        <br><%= @bar.zipcode %></br>
+        <br><%= @bar.neighborhood %></br>
+        <br><%= @bar.phone %></br>
+        <br><%= @bar.website %></br>
+        <br><%= render @specials %>
 
+
+</h5>
 
 
 <% if current_user.admin?  %>
-  | <%= link_to "delete", @bar, method: :delete,
+  | <%= link_to "Delete", @bar, method: :delete,
                                 data: { confirm: "You sure?" } %>
 <% end %>
 
 
 
 
-</h1>
+
     </section>
 
 </div>
