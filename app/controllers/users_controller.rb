@@ -20,7 +20,7 @@ before_action :admin_user,     only: :destroy
       log_in @user
       flash[:success] = "Thanks for registering!"
       session[:user_id] = @user.id
-      redirect_to @user
+      redirect_to root_path
     else
       render 'new'
   end
@@ -64,7 +64,7 @@ end
 
 private
   def user_params
-    params.require(:user).permit( :first_name, :last_name, :birthdate, :email, :password, :password_confirmation)
+    params.require(:user).permit( :user_name, :birthdate, :email, :password, :password_confirmation)
 
   end
 

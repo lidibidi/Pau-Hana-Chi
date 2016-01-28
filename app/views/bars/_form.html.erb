@@ -11,8 +11,7 @@
 </div>
 <% end %>
 
-
-<div class="field">
+  <div class="field">
     <%= f.label :bar_name %><br>
     <%= f.text_field :bar_name %>
   </div>
@@ -20,33 +19,66 @@
   <div class="field">
       <%= f.label :address %><br>
       <%= f.text_field :address %>
+  </div>
+
+  <div class="field">
+      <%= f.label :city %><br>
+      <%= f.text_field :city %>
+  </div>
+
+  <div class="field">
+      <%= f.label :zipcode %><br>
+      <%= f.text_field :zipcode %>
+  </div>
+
+  <div class="field">
+    <%= f.label :neighborhood %><br>
+    <%= f.text_field :neighborhood %>
+  </div>
+
+  <div class="field">
+      <%= f.label :phone %><br>
+      <%= f.text_field :phone %>
+  </div>
+
+  <div class="field">
+      <%= f.label :website %><br>
+      <%= f.text_field :website %>
+  </div>
+
+  <h2>Specials</h2>
+  <%= f.fields_for :specials do |s| %>
+  <div class="Specials_fields">
+    <div class="field">
+      <%= s.label :special_description %>
+      <%= s.text_field :special_description, class: 'form-control' %>
     </div>
 
     <div class="field">
-        <%= f.label :city %><br>
-        <%= f.text_field :city %>
+      <%= s.label :day %>
+      <%= s.text_field :day, class: 'form-control' %>
       </div>
 
-      <div class="field">
-          <%= f.label :zipcode %><br>
-          <%= f.text_field :zipcode %>
-        </div>
+    <div class="field">
+      <%= s.label :special_price %>
+      <%= s.text_field :special_price, class: 'form-control' %>
+    </div>
 
-        <div class="field">
-            <%= f.label :neighborhood %><br>
-            <%= f.text_field :neighborhood %>
-          </div>
-          <div class="field">
-              <%= f.label :phone %><br>
-              <%= f.text_field :phone %>
-            </div>
-            <div class="field">
-                <%= f.label :website %><br>
-                <%= f.text_field :website %>
-              </div>
+    <div class="field">
+      <%= s.label :start_time %>
+      <%= s.time_field :start_time, class: 'form-control' %>
+    </div>
 
-              <div class="actions">
-                <%= f.submit%>
-              </div>
+    <div class="field">
+      <%= s.label :end_time %>
+      <%= s.time_field :end_time, class: 'form-control' %>
+    </div>
+  </div>
 
-<% end %>
+    <% end %>
+
+    <div class="actions">
+      <%= f.submit%>
+    </div>
+
+    <% end %>

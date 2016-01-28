@@ -4,7 +4,7 @@ class BarsController < ApplicationController
 
   # get/bars
   def index
-    @bars = Bar.all
+    @bars = Bar.paginate(page: params[:page])
   end
 
 # post/bars
@@ -21,6 +21,7 @@ class BarsController < ApplicationController
   # get/bar/new
   def new
     @bar = Bar.new
+    1.times { @bar.specials.build}
   end
 
   # get/bars/id/edit
@@ -31,6 +32,7 @@ class BarsController < ApplicationController
   # get/bars/id
   def show
     @bar = current_bar
+    1.times { @bar.specials.build}
   end
 
 # patch/put/bars/1
@@ -56,6 +58,9 @@ end
     @barslatlong = [params[:latitude],params[:longitude]].join(",")
   end
 
+
+
+
 private
 
   def set_bar
@@ -67,6 +72,6 @@ private
   end
 
   def bar_params
-    params.require(:bar).permit(:bar_name, :address, :city, :zipcode, :neighborhood, :phone, :website, :latitude, :longitude)
+    params.require(:bar).permit(:bar_name, :address, :city, :zipcode, :neighborhood, :phone, :website, :latitude, :longitude, specials_attributes:[:special_id, :special_description, :day, :special_price, :start_time, :end_time])
   end
 end #the real end

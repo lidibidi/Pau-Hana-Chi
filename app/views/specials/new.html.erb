@@ -1,2 +1,27 @@
-<h1>Specials#new</h1>
-<p>Find me in app/views/specials/new.html.erb</p>
+<% provide(:title, 'Add Special') %>
+<h1>Add a special to a Pau Hana Chi Bar</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+<%= form_for @special do |f| %>
+
+      <%= f.label :special_description %>
+      <%= f.text_field :special_description, class: 'form-control' %>
+
+      <%= f.label :day %>
+      <%= f.text_field :day, class: 'form-control' %>
+
+      <%= f.label :special_price %>
+      <%= f.text_field :special_price, class: 'form-control' %>
+
+      <%= f.label :start_time %>
+      <%= f.time_field :start_time, class: 'form-control' %>
+
+      <%= f.label :end_time %>
+      <%= f.time_field :end_time, class: 'form-control' %>
+
+
+
+      <%= f.submit "Save Special", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+</div>

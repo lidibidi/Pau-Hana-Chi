@@ -1,27 +1,23 @@
 Rails.application.routes.draw do
 
+resources :sessions, only: [:new, :index, :destroy]
+
+resources :users #, only: [:new, :index, :create, :show]
+
+root "home#index"
+
+resources :specials, :bars, :users
+
   get    'signup'  => 'users#new'
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
-  get 'specials/index'
 
-  get 'specials/create'
+  resources :bars do
+    resources :specials
+  end
 
-  get 'specials/new'
-
-  get 'specials/edit'
-
-  get 'specials/show'
-
-  get 'specials/update'
-
-  get 'specials/destroy'
-
-  root "home#index"
-
-  resources :bars
-
+get '/bars/:bar_id/specials/:id' => 'specials#show'
   get 'bars/index'
 
   # get 'bars' => 'bars#show'
@@ -29,10 +25,10 @@ Rails.application.routes.draw do
   # get 'bars' => 'bars#show'
   # delete 'bars' => 'bars#destroy'
 
-  resources :users #, only: [:new, :index, :create, :show]
+
 
   # get 'login', to: 'sessions#new'
-  resources :sessions, only: [:new, :index, :destroy]
+
 
   # get "/home", to: "sessions#new"
   # post "/sessions", to: "sessions#create"
