@@ -1,28 +1,30 @@
 <% provide(:title, @bar.bar_name) %>
+
 <div class="row">
-  <aside class="col-md-4">
+
     <section class="bar_info">
-<h4>
+<h1>
+
+
+<%= @bar.bar_name %>
+<%= @bar.address %>
+<%= @bar.city %>
+<%= @bar.zipcode %>
+<%= @bar.neighborhood %>
+<%= @bar.phone %>
+<%= @bar.website %>
 
 
 
-    <br><%= @bar.bar_name %></br>
-    <br><%= @bar.address %></br>
-    <br><%= @bar.city %></br>
-    <br><%= @bar.zipcode%></br>
-    <br><%= @bar.neighborhood %></br>
-    <br><%= @bar.phone %></br>
-    <br><%= @bar.website %></br>
-    <br><%= @special.special_description %></br>
-    <br><%= @special.day %></br>
-    <br><%= @special.special_price %></br>
-    <br><%= @special.start_time %></br>
-    <br><%= @special.end_time %></br>
+<% if current_user.admin?  %>
+  | <%= link_to "delete", @bar, method: :delete,
+                                data: { confirm: "You sure?" } %>
+<% end %>
 
 
 
 
-</h4>
+</h1>
     </section>
-  </aside>
+
 </div>

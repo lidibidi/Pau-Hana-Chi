@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-before_action :admin_user,     only: :destroy
+before_action :admin_user,     only: [:destroy, :edit]
 # before_action :authenticate, :authorize, :only [:edit, :update, :show]
   def show
     @user = User.find(params[:id])

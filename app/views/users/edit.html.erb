@@ -21,6 +21,10 @@
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
+      <%= f.label :admin  %>
+      <%= f.radio_button :admin, "true", :value => true %>
+      <%= f.radio_button :admin, "false", :value => false %> <br>
+
       <%= f.submit "Save changes", class: "btn btn-primary" %>
     <% end %>
 

@@ -13,6 +13,7 @@ resources :specials, :bars, :users
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
 
+  get 'bars/new' => 'bars#new'
   resources :bars do
     resources :specials
   end

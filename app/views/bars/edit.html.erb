@@ -1,10 +1,9 @@
 <% provide(:title, "Edit Bar") %>
 <h1>Edit Pau Hana Bar Listing  </h1>
 
-div class="row">
+<div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@bar) do |f| %>
-      <%= render 'shared/error_messages' %>
 
       <%= f.label :bar_name %>
       <%= f.text_field :bar_name, class: 'form-control' %>
@@ -26,6 +25,38 @@ div class="row">
 
       <%= f.label :website %>
       <%= f.text_field :website, class: 'form-control' %>
+
+      <h2>Specials</h2>
+      <%= f.fields_for :specials do |s| %>
+      <div class="Specials_fields">
+        <div class="field">
+          <%= s.label :special_description %>
+          <%= s.text_field :special_description, class: 'form-control' %>
+        </div>
+
+        <div class="field">
+          <%= s.label :day %>
+          <%= s.text_field :day, class: 'form-control' %>
+          </div>
+
+        <div class="field">
+          <%= s.label :special_price %>
+          <%= s.text_field :special_price, class: 'form-control' %>
+        </div>
+
+        <div class="field">
+          <%= s.label :start_time %>
+          <%= s.time_field :start_time, class: 'form-control' %>
+        </div>
+
+        <div class="field">
+          <%= s.label :end_time %>
+          <%= s.time_field :end_time, class: 'form-control' %>
+        </div>
+      </div>
+
+        <% end %>
+
 
       <%= f.submit "Save changes", class: "btn btn-primary" %>
     <% end %>

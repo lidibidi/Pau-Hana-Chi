@@ -5,5 +5,6 @@ class Bar < ActiveRecord::Base
   :allow_destroy => true,
   :reject_if => :all_blank
 
-  geocoded_by :address, :latitude  => :lat, :longitude => :long
+  geocoded_by :address
+  after_validation :geocode
 end
