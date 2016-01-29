@@ -11,6 +11,7 @@ $brand-info:    #5bc0de;
 $brand-warning: #f0ad4e;
 $brand-danger:  #d9534f;
 $gray-medium-light: #eaeaea;
+$jumptronfont:  #fcf5f9;
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -27,15 +28,17 @@ body {
 
 }
 
-// .jumbotron{
-//   position: relative;
-//   background: #000 url('hawaiifloral.jpeg') center center;
-//   opacity: 0.6;
-//   width: 100%;
-//   height: 100%;
-//   background-size: cover;
-//   overflow: hidden;
-
+.jumbotron{
+  position: relative;
+  background: #000 url('transwpdarker.png') center center;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  overflow: hidden;
+  h1{
+    font: $jumptronfont;
+  }
+}
 
 section {
   overflow: auto;
@@ -51,7 +54,12 @@ textarea {
     margin-bottom: 10px;
   }
 }
+/* content*/
+#phcontent{
 
+  align: center;
+
+}
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {

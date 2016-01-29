@@ -2,7 +2,7 @@
 
 <div class="row">
 
-    <section class="bar_info">
+    <section class="bar_info" >
 <h5>
 
 
@@ -22,8 +22,9 @@
 
 <% if current_user.admin?  %>
 
-  | <%= link_to "Delete", @bar, method: :delete,
+   <%= link_to "Delete", @bar, method: :delete, class: "btn btn-primary",
                                 data: { confirm: "You sure?" } %>
+    <%= link_to "Edit", @current_bar, method: :edit, class: "btn btn-danger" %>
 <% end %>
 
 
