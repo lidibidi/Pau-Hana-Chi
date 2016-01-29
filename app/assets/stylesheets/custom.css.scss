@@ -1,8 +1,15 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url(https://fonts.googleapis.com/css?family=Luckiest+Guy|Slackey);
 
 /* mixins, variables, etc. */
 // $testing: #6da22c;
+
+$brand-primary: darken(#428bca, 6.5%); // #337ab7
+$brand-success: #5cb85c;
+$brand-info:    #5bc0de;
+$brand-warning: #f0ad4e;
+$brand-danger:  #d9534f;
 $gray-medium-light: #eaeaea;
 
 @mixin box_sizing {
@@ -14,7 +21,9 @@ $gray-medium-light: #eaeaea;
 /* universal */
 
 body {
+  font-family: 'Slackey', cursive;
   padding-top: 60px;
+  background-color: $brand-info;
 
 }
 
@@ -72,7 +81,7 @@ p {
 
 .special_info{
   margin-top: auto;
-  
+
 
 }
 
@@ -94,12 +103,15 @@ p {
 }
 
 #phclogo {
-  height: 200px;
-  width: 275px;
+  height: 350px;
+  width: 470px;
+
 
 
 }
-
+#navcolor{
+  background-color: $brand-warning;
+}
 /* footer */
 
 footer {
@@ -128,13 +140,13 @@ footer {
 
 /* miscellaneous */
 
-.debug_dump {
-  clear: both;
-  float: left;
-  width: 100%;
-  margin-top: 45px;
-  @include box_sizing;
-}
+// .debug_dump {
+//   clear: both;
+//   float: left;
+//   width: 100%;
+//   margin-top: 45px;
+//   @include box_sizing;
+// }
 
 /* sidebar */
 
