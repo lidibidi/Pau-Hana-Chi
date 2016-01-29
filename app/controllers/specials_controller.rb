@@ -7,7 +7,9 @@ before_action :admin_user,     only: [:destroy, :edit]
   end
 # post/Specials
   def create
-    @special = Special.new special_params
+    @bar = Bar.find(params[:bar_id])
+    @special = @bar.specials.build
+
     if @special.save
       flash[:success] = ["Special was added "]
       redirect_to bar_path

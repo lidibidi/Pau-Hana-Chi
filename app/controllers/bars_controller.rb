@@ -30,7 +30,7 @@ class BarsController < ApplicationController
   # get/bar/new
   def new
     @bar = Bar.new
-    1.times { @bar.specials.build}
+    3.times { @bar.specials.build}
   end
 
   # get/bars/id/edit

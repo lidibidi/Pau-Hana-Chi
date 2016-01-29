@@ -3,15 +3,16 @@
   <aside class="col-md-4">
     <section class="user_info">
 <h1>
-  <%= gravatar_for @user %>
+
 
   <%= @user.user_name  %>
   <%= @user.lat  %>
   <%= @user.lon  %>
+  <% if current_user.admin? %>
   <h3>Is admin?</h3><p><%= @user.admin  %></p>
 
-  <% if current_user.admin? %>
-    | <%= link_to "delete", @user, method: :delete, class: "btn btn-danger",
+
+     <%= link_to "delete", @user, method: :delete, class: "btn btn-danger",
                                   data: { confirm: "You sure?" } %>
 
 
