@@ -17,7 +17,7 @@ resources :specials, :bars, :users
   resources :bars do
     resources :specials
   end
-
+  get 'newbarspecial' => 'specials#new'
 get '/bars/:bar_id/specials/:id' => 'specials#show'
 get '/bars/:bar_id/specials' => 'specials#create'
 

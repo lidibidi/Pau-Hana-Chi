@@ -1,4 +1,5 @@
 class SpecialsController < ApplicationController
+
 before_action :admin_user,     only: [:destroy, :edit]
 #get/specials
   def index
@@ -26,7 +27,7 @@ before_action :admin_user,     only: [:destroy, :edit]
   end
 
   def show
-    set_bar
+
     @special = current_special
 
   end
@@ -50,9 +51,7 @@ end
 
 
 private
-  def set_bar
-    @bar = Bar.find(params[:id])
-  end
+
 
   def current_special
     @current_special || Special.find(params[:id]) if params[:id]

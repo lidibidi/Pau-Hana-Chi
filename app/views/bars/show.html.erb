@@ -13,13 +13,15 @@
         <br><%= @bar.neighborhood %></br>
         <br><%= @bar.phone %></br>
         <br><%= @bar.website %></br>
-        <br><%= render @specials %>
+        <br><%= render @specials %></br>
 
 
 </h5>
 
 
+
 <% if current_user.admin?  %>
+
   | <%= link_to "Delete", @bar, method: :delete,
                                 data: { confirm: "You sure?" } %>
 <% end %>
