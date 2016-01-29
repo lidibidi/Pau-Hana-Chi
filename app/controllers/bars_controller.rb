@@ -10,7 +10,7 @@ class BarsController < ApplicationController
       marker.lng bar.longitude
       marker.infowindow bar.bar_name
       marker.picture( {
-        "url": "http://i.imgur.com/ubmQbZx.png",
+        "url": "http://i.imgur.com/dNVi4Xq.png",
         "width":  32,
         "height": 32})
     end
